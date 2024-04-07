@@ -15,7 +15,7 @@
   "historyRange": "History Range",
   "inbox": {
     "defaultMessage": "Hello, I'm your virtual agent. You can ask me anything, and I'll do my best to answer you. If you need a more professional or customized agent, click on `+` to create a custom agent.",
-    "desc": "Activate the brain cluster and spark creative thinking. Your virtual agent is here to communicate with you about everything.",
+    "desc": "Hello. I am Oskar Mast. I am here to chat with you. Don't hesitate to tell me.",
     "title": "Just Chat"
   },
   "input": {
