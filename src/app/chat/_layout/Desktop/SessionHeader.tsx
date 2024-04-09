@@ -11,10 +11,6 @@ export const useStyles = createStyles(({ css, token }) => ({
   logo: css`
     fill: ${token.colorText};
   `,
-  logoImg: css`
-    width: 50px;
-    height: 50px;
-  `,
   top: css`
     position: sticky;
     top: 0;
@@ -27,13 +23,7 @@ const Header = memo(() => {
     <Flexbox className={styles.top} gap={16} padding={16}>
       <Flexbox distribution={'space-between'} horizontal>
         <Flexbox align={'center'} gap={4} horizontal>
-          <Image
-            alt={'logo'}
-            className={styles.logoImg}
-            height={50}
-            src={'/images/logo1.png'}
-            width={50}
-          />
+          <Image alt={'logo'} height={36} src={'/images/name.png'} width={75} />
           <SyncStatusTag />
         </Flexbox>
       </Flexbox>

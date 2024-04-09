@@ -37,7 +37,7 @@ const Main = memo(() => {
         background={'transparent'}
         shape={'circle'}
         size={40}
-        src={'/images/logo1.png'}
+        src={'/images/icone.png'}
         title={'chat avatar'}
       />
       <ChatHeaderTitle desc={displayDesc} tag={<Tags />} title={displayTitle} />
