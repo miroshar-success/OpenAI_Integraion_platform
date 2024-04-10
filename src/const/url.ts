@@ -37,4 +37,7 @@ export const AGENTS_INDEX_GITHUB_ISSUE = urlJoin(AGENTS_INDEX_GITHUB, 'issues/ne
 export const SESSION_CHAT_URL = (id: string = INBOX_SESSION_ID, mobile?: boolean) =>
   mobile ? `/chat/mobile?session=${id}` : `/chat?session=${id}`;
 
+export const SESSION_USER_CHAT_URL = (id: string = INBOX_SESSION_ID, mobile?: boolean) =>
+  mobile ? `/userchat/mobile?session=${id}` : `/userchat?session=${id}`;
+
 export const imageUrl = (filename: string) => withBasePath(`/images/${filename}`);

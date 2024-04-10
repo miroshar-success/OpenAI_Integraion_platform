@@ -1,6 +1,7 @@
 import { ActionIcon } from '@lobehub/ui';
 import { MessageSquare } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -15,12 +16,12 @@ export interface TopActionProps {
 const TopActions = memo<TopActionProps>(({ tab }) => {
   const { t } = useTranslation('common');
   const switchBackToChat = useGlobalStore((s) => s.switchBackToChat);
-
+  const pathname = usePathname();
   return (
     <>
       <Link
         aria-label={t('tab.chat')}
-        href={'/chat'}
+        href={pathname === '/userchat' ? '/userchat' : '/chat'}
         onClick={(e) => {
           e.preventDefault();
           switchBackToChat(useSessionStore.getState().activeId);
