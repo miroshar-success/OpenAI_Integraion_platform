@@ -5,9 +5,8 @@ import { usePathname } from 'next/navigation';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { GlobalStore, useGlobalStore } from '@/store/global';
+import { GlobalStore } from '@/store/global';
 import { SidebarTabKey } from '@/store/global/initialState';
-import { useSessionStore } from '@/store/session';
 
 export interface TopActionProps {
   tab?: GlobalStore['sidebarKey'];
@@ -15,18 +14,10 @@ export interface TopActionProps {
 
 const TopActions = memo<TopActionProps>(({ tab }) => {
   const { t } = useTranslation('common');
-  const switchBackToChat = useGlobalStore((s) => s.switchBackToChat);
   const pathname = usePathname();
   return (
     <>
-      <Link
-        aria-label={t('tab.chat')}
-        href={pathname === '/userchat' ? '/userchat' : '/chat'}
-        onClick={(e) => {
-          e.preventDefault();
-          switchBackToChat(useSessionStore.getState().activeId);
-        }}
-      >
+      <Link aria-label={t('tab.chat')} href={pathname === '/userchat' ? '/userchat' : '/chat'}>
         <ActionIcon
           active={tab === SidebarTabKey.Chat}
           icon={MessageSquare}
